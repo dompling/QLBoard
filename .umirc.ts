@@ -1,7 +1,10 @@
 import { defineConfig } from 'umi';
 import path from 'path';
 
+const productPath = process.env.NODE_ENV === 'production' ? '/QLBoard/' : '/';
+
 export default defineConfig({
+  publicPath: productPath,
   nodeModulesTransform: {
     type: 'none',
   },
