@@ -40,24 +40,25 @@ const IndexPage = () => {
     },
   });
 
-  const fetchTaskInfo = useRequest(getTaskInfo, {
-    manual: true,
-    onSuccess: (data, params) => {
-      const newData = dataSource.map(item => {
-        if (item._id === params[0]) return data;
-        return item;
-      });
-      setData(newData);
-      fetchTaskLog.run(params[0]);
-    },
-  });
-
   const fetchTaskLog = useRequest(runTaskLog, {
     manual: true,
     pollingInterval: 2000,
     onSuccess: (data) => {
       setLog(data);
       if (!data || data.indexOf('执行结束') > -1) fetchTaskLog.cancel();
+    },
+  });
+
+  const fetchTaskInfo = useRequest(getTaskInfo, {
+    manual: true,
+    onSuccess: (data, params) => {
+      const newData = dataSource.map(item => {
+        // eslint-disable-next-line no-underscore-dangle
+        if (item._id === params[0]) return data;
+        return item;
+      });
+      setData(newData);
+      fetchTaskLog.run(params[0]);
     },
   });
 
@@ -245,7 +246,7 @@ const IndexPage = () => {
                   className={'ml-3'}
                   onClick={() => {
                     if (!item.status) return;
-                    return runTask(item._id);
+                    runTask(item._id);
                   }}
                 >
                   <svg

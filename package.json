@@ -22,9 +22,11 @@
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "@headlessui/react": "^1.1.1",
+    "@umijs/fabric": "^2.5.12",
     "@umijs/hooks": "^1.9.3",
     "@umijs/preset-react": "1.x",
     "antd-mobile": "^2.3.4",
+    "eslint": "^7.26.0",
     "tailwindcss": "^2.1.2",
     "umi": "^3.4.15"
   },
