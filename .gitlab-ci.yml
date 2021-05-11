@@ -3,9 +3,8 @@ pages:
     - html
   stage: deploy
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
+    - rm -rf public/*
+    - mv docs/* public
   artifacts:
     paths:
       - public
