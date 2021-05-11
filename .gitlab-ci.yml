@@ -1,16 +1,10 @@
-image: node:16.1.0
-
-cache:
-  paths:
-    - node_modules/
-
-before_script:
-  - test -e package.json && npm install
-  - QLBoard generate
-
 pages:
+  tags:
+    - html
+  stage: deploy
   script:
-    - QLBoard generate
+    - rm -rf public/*
+    - mv docs/* public
   artifacts:
     paths:
       - public
