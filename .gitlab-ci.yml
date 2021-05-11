@@ -2,11 +2,8 @@ pages:
   tags:
     - html
   stage: deploy
-  script:
-    - rm -rf public/*
-    - mv docs/* public
   artifacts:
     paths:
-      - public
+      - docs
   only:
     - master
