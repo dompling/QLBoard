@@ -1,4 +1,7 @@
 pages:
+  tags:
+    - html
+  stage: deploy
   script:
     - rm -rf public/*
     - mv docs/* public/
