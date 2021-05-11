@@ -1,9 +1,0 @@
-pages:
-  tags:
-    - html
-  stage: deploy
-  artifacts:
-    paths:
-      - docs
-  only:
-    - master
