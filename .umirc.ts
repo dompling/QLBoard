@@ -1,7 +1,7 @@
 import { defineConfig } from 'umi';
 import path from 'path';
 
-const productPath = process.env.NODE_ENV === 'production' ? '/public/' : '/';
+const productPath = process.env.NODE_ENV === 'production' ? '/qlboard/' : '/';
 
 export default defineConfig({
   publicPath: productPath,
